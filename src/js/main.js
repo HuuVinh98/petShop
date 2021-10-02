@@ -8,8 +8,7 @@ $(document).ready(function(){
             nav:true
         }
     );
-  });
-  $(document).ready(function(){
+
     $(".trending .owl-carousel").owlCarousel(
         {
             items:3,
@@ -18,9 +17,7 @@ $(document).ready(function(){
             navText:[`<i class="fas fa-caret-left"></i>`,`<i class="fas fa-caret-right"></i>`]
         }
     );
-  });
 
-  $(document).ready(function(){
     $(".our-products .owl-carousel").owlCarousel(
         {
             items:4,
@@ -31,4 +28,18 @@ $(document).ready(function(){
             navText:[`<i class="fas fa-caret-left"></i>`,`<i class="fas fa-caret-right"></i>`]
         }
     );
+
+    $(".review .owl-carousel").owlCarousel(
+        {
+            items:2,
+            loop:true,
+            nav:true,
+            autoplay:true,
+            autoplayTimeout:3000,
+            navText:[`<i class="fas fa-caret-left"></i>`,`<i class="fas fa-caret-right"></i>`]
+        }
+    );
   });
+  
+
+ 
