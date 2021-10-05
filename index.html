@@ -14,6 +14,13 @@
     <title>PetShop</title>
 </head>
 <body>
+
+    <!-- start return button -->
+    <div class="turn-top-button flex j-center a-center">
+        <a href="#"><i class="fas fa-angle-double-up"></i></a>
+    </div>
+    <!-- end return but -->
+    
     <!-- start header -->
     <header>
    
@@ -64,9 +71,61 @@
             <div class="sub-circle"></div>
         </div>
         <ul class="menu flex j-spaceBetween a-center">
-            <li><a href="#">Home</a></li>
+            <li class="home">
+                <div class="flex j-spaceBetween a-center"><span>Home</span><i class="fas fa-angle-down"></i></div>
+                <ul class="dropdown f-column">
+                    <li><a href="#">Home 1</a></li>
+                    <li><a href="#">Home 2</a></li>
+                    <li><a href="#">Home 3</a></li>
+                    <li><a href="#">Home 4</a></li>
+                    <li><a href="#">Home 5</a></li>
+                </ul>
+            </li>
             <li><a href="#">About</a></li>
-            <li><a href="#">Shop</a></li>
+            <li class="shop">
+                <div class="flex j-spaceBetween a-center"><span>Shop</span><i class="fas fa-angle-down"></i></div>
+                <ul class="dropdown j-spaceBetween a-start">
+                    <li>
+                        <ul>
+                            <li>Fish</li>
+                            <li><a href="#">Fish 1</a></li>
+                            <li><a href="#">Fish 2</a></li>
+                            <li><a href="#">Fish 3</a></li>
+                            <li><a href="#">Fish 4</a></li>
+                            <li><a href="#">Fish 5</a></li>
+                            
+                        </ul>
+                    </li>
+                    <li>
+                        <ul>
+                            <li>Hamster</li>
+                            <li><a href="#">Hamster 1</a></li>
+                            <li><a href="#">Hamster 2</a></li>
+                            <li><a href="#">Hamster 3</a></li>
+                            <li><a href="#">Hamster 4</a></li>
+                            <li><a href="#">Hamster 5</a></li>
+
+                        </ul>
+                    </li>
+                    <li>
+                        <ul>
+                            <li>Bird</li>
+                            <li><a href="">Bird 1</a></li>
+                            <li><a href="">Bird 2</a></li>
+                            <li><a href="">Bird 3</a></li>
+                            <li><a href="">Bird 4</a></li>
+                            <li><a href="">Bird 5</a></li>
+
+                        </ul>
+                    </li>
+                    <li class="cc">
+                        <div class="image">
+                        <img src="./src/images/exfish.png" alt="">
+                        </div>
+                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
+                    </li>
+                </ul>
+            </li>
             <li><a href="#">Service</a></li>
             <li><a href="#">Contact</a></li>
         </ul>

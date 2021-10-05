@@ -502,8 +502,56 @@
   }
 }
 
+@-webkit-keyframes shaky {
+  to {
+    -webkit-transform: translate(-10px, -10px);
+            transform: translate(-10px, -10px);
+  }
+}
+
+@keyframes shaky {
+  to {
+    -webkit-transform: translate(-10px, -10px);
+            transform: translate(-10px, -10px);
+  }
+}
+
+@-webkit-keyframes top {
+  to {
+    -webkit-transform: translateY(-10px);
+            transform: translateY(-10px);
+  }
+}
+
+@keyframes top {
+  to {
+    -webkit-transform: translateY(-10px);
+            transform: translateY(-10px);
+  }
+}
+
 html, body {
   font-family: "Jost", "Sans Serif";
+}
+
+.turn-top-button {
+  width: 50px;
+  height: 50px;
+  background-color: #266CF9;
+  position: fixed;
+  top: 500px;
+  right: 50px;
+  z-index: 12;
+  border-radius: 50%;
+}
+
+.turn-top-button:hover a {
+  -webkit-animation: top 1s forwards infinite;
+          animation: top 1s forwards infinite;
+}
+
+.turn-top-button a i {
+  color: white;
 }
 
 header {
@@ -658,7 +706,7 @@ header nav .menu {
   width: 70%;
 }
 
-header nav .menu li {
+header nav .menu > li {
   height: 100%;
   padding: 5px;
   display: -webkit-box;
@@ -674,13 +722,144 @@ header nav .menu li {
   transition: all 1s;
 }
 
-header nav .menu li a {
-  font-size: 30px;
+header nav .menu > li a, header nav .menu > li div {
+  font-size: 24px;
   color: white;
 }
 
-header nav .menu li:hover {
+header nav .menu > li a i, header nav .menu > li div i {
+  font-size: 20px;
+}
+
+header nav .menu > li:hover {
   background-color: #0847c5;
+}
+
+header nav .menu .home, header nav .menu .shop {
+  position: relative;
+  -webkit-transition: all 1s;
+  transition: all 1s;
+}
+
+header nav .menu .home .dropdown, header nav .menu .shop .dropdown {
+  z-index: 11;
+  padding: 20px;
+  min-width: 200px;
+  background-color: white;
+  position: absolute;
+  height: -webkit-max-content;
+  height: -moz-max-content;
+  height: max-content;
+  top: 50px;
+  left: 0;
+  display: none;
+}
+
+header nav .menu .home .dropdown li, header nav .menu .shop .dropdown li {
+  width: 100%;
+  -webkit-transition: all 1s;
+  transition: all 1s;
+}
+
+header nav .menu .home .dropdown li:hover, header nav .menu .shop .dropdown li:hover {
+  -webkit-transform: translateX(10px);
+          transform: translateX(10px);
+}
+
+header nav .menu .home .dropdown li:hover a, header nav .menu .shop .dropdown li:hover a {
+  color: #266BF9;
+}
+
+header nav .menu .home .dropdown li a, header nav .menu .shop .dropdown li a {
+  color: #5a5454;
+  font-size: 20px;
+}
+
+header nav .menu .shop .dropdown {
+  left: 50%;
+  height: -webkit-max-content;
+  height: -moz-max-content;
+  height: max-content;
+  -webkit-transform: translateX(-50%);
+          transform: translateX(-50%);
+  padding: 50px 0px;
+  border-bottom-right-radius: 20px;
+}
+
+header nav .menu .shop .dropdown li {
+  width: 100px;
+  margin: 0px 20px;
+}
+
+header nav .menu .shop .dropdown li:hover {
+  -webkit-transform: translateX(0);
+          transform: translateX(0);
+}
+
+header nav .menu .shop .dropdown li:hover a {
+  color: #5a5454;
+}
+
+header nav .menu .shop .dropdown li ul {
+  width: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  margin-right: 5px;
+}
+
+header nav .menu .shop .dropdown li ul li {
+  text-align: center;
+  -webkit-transition: all 1s;
+  transition: all 1s;
+  width: 100%;
+  overflow: hidden;
+}
+
+header nav .menu .shop .dropdown li ul li:hover {
+  padding-left: 10px;
+}
+
+header nav .menu .shop .dropdown li ul li:hover a {
+  color: #266BF9;
+}
+
+header nav .menu .shop .dropdown li ul li:first-child {
+  font-size: 24px;
+  font-weight: bold;
+}
+
+header nav .menu .shop .dropdown li ul li:first-child:hover {
+  padding-left: 0;
+}
+
+header nav .menu .shop .dropdown .cc {
+  width: 300px;
+}
+
+header nav .menu .shop .dropdown .cc .image {
+  border: 1px solid #c4c4c4;
+  width: 300px;
+  overflow: hidden;
+}
+
+header nav .menu .shop .dropdown .cc .image img {
+  width: 300px;
+  height: 150px;
+  -webkit-transition: all 1s;
+  transition: all 1s;
+}
+
+header nav .menu .shop .dropdown .cc .image img:hover {
+  -webkit-transform: scale(1.2) rotate(15deg);
+          transform: scale(1.2) rotate(15deg);
 }
 
 .slider {
@@ -697,6 +876,8 @@ header nav .menu li:hover {
   position: absolute;
   top: 35%;
   left: 10%;
+  -webkit-animation: shaky 1s infinite alternate;
+          animation: shaky 1s infinite alternate;
 }
 
 .slider .slide .text .container {

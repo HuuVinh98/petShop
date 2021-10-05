@@ -40,6 +40,35 @@ $(document).ready(function(){
         }
     );
   });
-  
+
+$(".home,.shop").hover(function () {
+          $(this).children(".dropdown").stop(true,false,true).slideDown();
+          $(this).children(".dropdown").css('display', 'flex');
+          
+      }, function () {
+        $(this).children(".dropdown").stop(true,false,true).slideUp();
+      }
+);
+
+$(window).scroll(function () { 
+    const currentPos = $(this).scrollTop();
+    if (currentPos<300)
+    {
+        $(".turn-top-button").css("display", "none");
+    }
+    else 
+    {
+        $(".turn-top-button").css("display", "flex");
+    }
+});
+
+$(".turn-top-button").click(function (e) { 
+    e.preventDefault();
+    $("body,html").animate(
+        {
+            scrollTop:0,
+        }
+    );
+});
 
  
