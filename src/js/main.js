@@ -1,4 +1,5 @@
 $(document).ready(function(){
+    //slider
     $(".slider .owl-carousel").owlCarousel(
         {
             items:1,
@@ -8,19 +9,41 @@ $(document).ready(function(){
             nav:true
         }
     );
-
+        //trending
     $(".trending .owl-carousel").owlCarousel(
         {
-            items:3,
+            responsiveClass:true,
+            responsive:{
+                0:{
+                    items:1,
+                },
+                576:{
+                    items:2,
+                },
+                768:{
+                    items:3,
+                }
+            },
             loop:true,
             nav:true,
             navText:[`<i class="fas fa-caret-left"></i>`,`<i class="fas fa-caret-right"></i>`]
         }
     );
-
+        //our products
     $(".our-products .owl-carousel").owlCarousel(
         {
-            items:4,
+            responsiveClass:true,
+            responsive:{
+                0:{
+                    items:1,
+                },
+                576:{
+                    items:2,
+                },
+                768:{
+                    items:3,
+                }
+            },
             loop:true,
             nav:true,
             autoplay:true,
@@ -28,10 +51,18 @@ $(document).ready(function(){
             navText:[`<i class="fas fa-caret-left"></i>`,`<i class="fas fa-caret-right"></i>`]
         }
     );
-
+        //review
     $(".review .owl-carousel").owlCarousel(
         {
-            items:2,
+            responsiveClass:true,
+            responsive:{
+                0:{
+                    items:1,
+                },
+                768:{
+                    items:2,
+                },
+            },
             loop:true,
             nav:true,
             autoplay:true,

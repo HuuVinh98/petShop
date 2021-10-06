@@ -22,10 +22,22 @@ input, button
 }
 .container
 {
-    max-width: 1200px;
+    max-width: 1150px;
     margin: 0 auto;
     @include lg(){
         padding: 0px 3%;
+    }
+    @include md()
+    {
+        max-width: 800px;
+    }
+    @include sm()
+    {
+        max-width: 680px;
+    }
+    @include xs()
+    {
+       padding: 0px 10%;
     }
 }
 .container2
