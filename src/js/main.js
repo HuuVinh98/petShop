@@ -30,7 +30,7 @@ $(document).ready(function(){
         }
     );
         //our products
-    $(".our-products .owl-carousel").owlCarousel(
+    $(".material .owl-carousel").owlCarousel(
         {
             responsiveClass:true,
             responsive:{
@@ -42,6 +42,13 @@ $(document).ready(function(){
                 },
                 768:{
                     items:3,
+                },
+                992:{
+                    items:4,
+                },
+                1140: 
+                {
+                    items:5
                 }
             },
             loop:true,
@@ -71,7 +78,7 @@ $(document).ready(function(){
         }
     );
   });
-
+// show menu
 $(".home,.shop").hover(function () {
           $(this).children(".dropdown").stop(true,false,true).slideDown();
           $(this).children(".dropdown").css('display', 'flex');
@@ -80,7 +87,7 @@ $(".home,.shop").hover(function () {
         $(this).children(".dropdown").stop(true,false,true).slideUp();
       }
 );
-
+// scroll top button
 $(window).scroll(function () { 
     const currentPos = $(this).scrollTop();
     if (currentPos<300)
@@ -102,4 +109,29 @@ $(".turn-top-button").click(function (e) {
     );
 });
 
+// show menu in responsive viewport
+$(".bar").on("click", function () {
+    $(".nav-resp").stop(true,false,true).slideDown(500);
+});
+//close menu in responsive viewport
+$(".close-menu").on("click", function () {
+    $(".nav-resp").stop(true,false,true).slideUp(500);
+});
+//show - hide sub menu
+$(document).on("click",".down", function () {
+    $(this).parents("li").children(".dropdown").stop(true,false,true).slideDown();
+        $(this).addClass("up");
+        $(this).empty();
+        $(this).append(`<i class="fas fa-angle-up"></i>`);
+        $(this).removeClass("down");
+});
+
+$(document).on("click",".up", function () {
+    $(this).parents("li").children(".dropdown").slideUp(); 
+    $(this).addClass("down");
+    $(this).empty();
+    $(this).append(`<i class="fas fa-angle-down"></i>`);
+    $(this).removeClass("up");
+});
+    
  
