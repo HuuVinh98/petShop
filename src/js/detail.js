@@ -1,0 +1,39 @@
+$(document).ready(function(){
+    $(".product-detail .main-product .owl-carousel").owlCarousel(
+        {
+            items:1,
+            loop:true,
+            autoplay:true,
+            autoplayTimeout:3000,
+            nav:true
+        }
+    );
+    $(".product-detail .related-products .owl-carousel").owlCarousel(
+        {
+            responsiveClass:true,
+            responsive:{
+                0:{
+                    items:1,
+                },
+                576:{
+                    items:2,
+                },
+                768:{
+                    items:3,
+                },
+                992:{
+                    items:4,
+                },
+                1140: 
+                {
+                    items:5
+                }
+            },
+            loop:true,
+            autoplay:true,
+            autoplayTimeout:3000,
+            nav:true
+        }
+    );
+
+  });

@@ -133,5 +133,44 @@ $(document).on("click",".up", function () {
     $(this).append(`<i class="fas fa-angle-down"></i>`);
     $(this).removeClass("up");
 });
-    
- 
+// header
+$(function ()
+{
+    $(window).scroll(function(){
+        let nowScrollTop = $(this).scrollTop();
+        if ($(window).width()>=993)
+        {
+            if(nowScrollTop>300)
+            {
+                $(".navigation").css({"position":"fixed",
+                "top":"0px",
+                "width":"100%",
+                "padding":"50px 0px",
+                
+                    } );
+                $(".navigation .circle").css("display","none")
+            }
+            else
+            {
+                $(".navigation").css({"position":"absolute",
+                    "top":"210px",
+                    "width":"55%",
+                    "heigt":"50px",
+                    "padding":"0px"
+                
+                    } );
+                //    $(".navigation").removeProperty("top");
+                $(".navigation .circle").css("display","flex")
+            }
+        }
+        
+    })
+});
+
+//go to detail page
+$(document).ready(function () {
+    $(".item").click(function (e) { 
+        e.preventDefault();
+        window.location.href="./detail.html"
+    });
+});
